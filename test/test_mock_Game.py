@@ -4,9 +4,6 @@ from card_game.Game import *
 
 class test_mock_Game(unittest.TestCase):
 
-    def setUp(self):
-        computer_names.clear()
-
     def test_get_game_info(self):
         pass
 

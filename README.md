@@ -17,6 +17,22 @@ Mocking allows you to test your application completely. It allows you to mock us
 
 Remember to read and implement the sub-tasks one at a time, following the given order. Do not move on to the next sub-task until the current one has been completed. Implement the required features by working in the `task.py` file.
 
+## Sub-task Example - Get Input String
+
+Mocking an input from the console.
+
+### Requirement
+
+* Open test/test_mock_ConsoleInOut.py
+* Implement unit test "test_get_input_string"
+* Patch "card_game.communication.ConsoleInOut.get_string"
+* Set return_value to be "Derek"
+* Assert equal expected Derek to the result from get_input_string("What is your name")
+* Run test and check passes
+
+### Example
+* See example unit test "test_get_input_string"
+
 ## Sub-task 1 – Mock Console Input
 
 Mocking an input from the console.
@@ -24,13 +40,13 @@ Mocking an input from the console.
 ### Requirement
 
 * Open test/test_mock_ConsoleInOut.py
-* See example unit test "test_get_input_string"
 * Implement unit test "test_get_input_integer"
 * Patch "card_game.communication.ConsoleInOut.get_string"
 * Set return_value to be "3"
 * Assert equal expected 3 to the result from get_input_integer("What is your age")
+* Run test and check passes
 
-### Examples
+### Example
 * See example unit test "test_get_input_string"
 
 ## Sub-task 2 – Mock Console Game Info
@@ -45,9 +61,11 @@ Mocking an input from the console.
 * Set side_effect to be a list "Derek" and 3
 * Call get_game_info returning name and number_of_players
 * Assert equal expected 3 to number_of_players
+* Run test and check passes
 
-### Examples
+### Example
 * See example unit test "test_get_input_string"
+* mock_input.side_effect = ["Xi", "4"]
 
 ## Sub-task 3 – Mock Console Input With Built In
 
@@ -57,12 +75,16 @@ Mocking an input from the console.
 
 * Open test/test_mock_ConsoleInOut.py
 * Implement unit test "test_get_input_string_builtin"
-* Patch "builtins.input"
+* Patch input
 * Set return value equal "Derek"
 * Assert equal expected "Derek" to equal get_input_string("What is your name")
+* Run test and check passes
 
-### Examples
-* See example unit test "test_get_input_string"
+### Example
+* @patch("builtins.input", return_value="3")
+* def test_get_input_integer_builtin(self, mock_input):
+*   self.assertEqual(3, get_input_integer("What is your age"))
+
 
 ## Sub-task 4 – Mock File Load
 
@@ -74,9 +96,7 @@ Mocking an input from the console.
 * Implement unit test "test_get_csv_rows"
 * Patch "builtins.open" and pass mock_open(read_data="Derek\nXi")
 * Assert equal expected "Xi" to equal get_csv_rows("test.txt")[1][0]
-
-### Examples
-* See example unit test "test_get_input_string"
+* Run test and check passes
 
 ## Sub-task 5 – Mock Get Player Names
 
@@ -88,9 +108,7 @@ Mocking an input from the console.
 * Implement unit test "test_get_computer_players_names"
 * Patch "builtins.open" and pass mock_open(read_data="DEALER,Derek\nCOMPUTER,Xi")
 * Assert equal expected "Xi" to equal get_computer_players_names()[1]
-
-### Examples
-* See example unit test "test_get_input_string"
+* Run test and check passes
 
 # Run Tests
 
