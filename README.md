@@ -25,8 +25,7 @@ Mocking an input from the console.
 
 * Open test/test_mock_ConsoleInOut.py
 * Implement unit test "test_get_input_string"
-* Patch "card_game.communication.ConsoleInOut.get_string"
-* Set return_value to be "Derek"
+* Get "ConsoleInOut.get_string" to have a return_value of "Derek"
 * Assert equal expected Derek to the result from get_input_string("What is your name")
 * Run test and check passes
 
@@ -41,8 +40,7 @@ Mocking an input from the console.
 
 * Open test/test_mock_ConsoleInOut.py
 * Implement unit test "test_get_input_integer"
-* Patch "card_game.communication.ConsoleInOut.get_string"
-* Set return_value to be "3"
+* Get "ConsoleInOut.get_string" to have a return_value of "3"
 * Assert equal expected 3 to the result from get_input_integer("What is your age")
 * Run test and check passes
 
@@ -57,15 +55,10 @@ Mocking an input from the console.
 
 * Open test/test_mock_Game.py
 * Implement unit test "test_get_game_info"
-* Patch "card_game.communication.ConsoleInOut.get_string"
-* Set side_effect to be a list "Derek" and 3
+* Get "ConsoleInOut.get_string" to return "Derek" and then 3
 * Call get_game_info returning name and number_of_players
 * Assert equal expected 3 to number_of_players
 * Run test and check passes
-
-### Example
-* See example unit test "test_get_input_string"
-* mock_input.side_effect = ["Xi", "4"]
 
 ## Sub-task 3 – Mock Console Input With Built In
 
@@ -75,15 +68,9 @@ Mocking an input from the console.
 
 * Open test/test_mock_ConsoleInOut.py
 * Implement unit test "test_get_input_string_builtin"
-* Patch input
-* Set return value equal "Derek"
+* Get python built in "input" to have return value equal "Derek"
 * Assert equal expected "Derek" to equal get_input_string("What is your name")
 * Run test and check passes
-
-### Example
-* @patch("builtins.input", return_value="3")
-* def test_get_input_integer_builtin(self, mock_input):
-*   self.assertEqual(3, get_input_integer("What is your age"))
 
 
 ## Sub-task 4 – Mock File Load
@@ -94,7 +81,7 @@ Mocking an input from the console.
 
 * Open test/test_mock_LoadCSV.py
 * Implement unit test "test_get_csv_rows"
-* Patch "builtins.open" and pass mock_open(read_data="Derek\nXi")
+* Get the built in Python file open to return "Derek\nXi"
 * Assert equal expected "Xi" to equal get_csv_rows("test.txt")[1][0]
 * Run test and check passes
 
@@ -106,7 +93,7 @@ Mocking an input from the console.
 
 * Open test/test_mock_Game.py
 * Implement unit test "test_get_computer_players_names"
-* Patch "builtins.open" and pass mock_open(read_data="DEALER,Derek\nCOMPUTER,Xi")
+* Get the built in Python file open to return  "DEALER,Derek\nCOMPUTER,Xi"
 * Assert equal expected "Xi" to equal get_computer_players_names()[1]
 * Run test and check passes
 
