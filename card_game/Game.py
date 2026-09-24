@@ -19,7 +19,6 @@ user_index = 1
 computer_names = []
 players = []
 finish_game = False
-help_class: Type[T] = None
 
 def get_player(index: int):
     return players[index]
@@ -86,7 +85,6 @@ def determine_winner():
         if not individual_has_won and current_score > winning_score:
             winning_score = current_score
             winning_player = player
-    winning_player[WINNER] = True
     return winning_player
 
 def show_players() -> None:
