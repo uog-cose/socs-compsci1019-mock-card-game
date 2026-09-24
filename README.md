@@ -1,6 +1,6 @@
 # Introduction
 
-Mocking allows you to test your application completely. It allows you to mock user input and input from files and databases. The main libraries used for this purpuse are `MagicMock`, `patch` and `mock_open`. For this task you are required to implement several unit tests using these libraries.
+Mocking allows you to test your application completely. It allows you to mock user input from console, files and databases. The main libraries used from from `unittest.mock` are `patch` and `mock_open`. For this task you are required to implement several unit tests using these libraries.
 
 # Instructions
 
@@ -23,28 +23,26 @@ To mock an input from the console.
 
 ### Requirement
 
-* Open test/test_mock_ConsoleInOut.py
-* Implement unit test `test_get_input_string`
-* We want to test `ConsoleInOut.get_input_string` that calls `get_string` to get an input from the console.
-* Mock `get_string` to return "Derek"
-* Assert equal expected Derek to the result from get_input_string("What is your name")
-* Run test and check passes
+* Implement unit test `test_get_input_string` in `test/test_mock_ConsoleInOut.py` to mock a method.
+* This is a unit test for method `ConsoleInOut.get_input_string` that recieves a string input through `get_string` from the console.
+* Mock the method `get_string` to return "Derek".
+* The expected parameter in the unit test case is "Derek".
+* The result parameter will call the method being tested and the test should pass.
 
 ### Example
 * See example unit test "test_get_input_string" in test/test_mock_ConsoleInOut.py
 
-## Sub-task 1 – Mock Console Input
+## Sub-task 1 – Mock Console Input Integer
 
 To mock an input from the console.
 
 ### Requirement
 
-* Open test/test_mock_ConsoleInOut.py
-* Implement unit test "test_get_input_integer"
+* Implement unit test `test_get_input_integer` in `test/test_mock_ConsoleInOut.py` to mock a method.
 * We want to test `ConsoleInOut.get_input_integer` that calls `get_string` to get an input from the console.
-* Mock `get_string` to return "18"
-* Assert equal expected 18 to the result from get_input_integer("What is your age")
-* Run test and check passes
+* Mock the method `get_string` to return "18"
+* The expected parameter in the unit test case is 18.
+* The result parameter will call the method being tested and the test should pass.
 
 ### Example
 * See example unit test "test_get_input_string"
@@ -55,13 +53,12 @@ To mock an input from the console.
 
 ### Requirement
 
-* Open `test/test_mock_Game.py`
-* Implement unit test `test_get_game_info`
+* Implement unit test `test_get_game_info` in `test/test_mock_Game.py` to mock a method.
 * Get "ConsoleInOut.get_string" to return "Derek" and then 3
 * We want to test `Game.get_game_info` that calls `get_input_string` and `get_input_integer` to get an inputs from the console.
-* Mock `get_string` to return "Derek" and then "3"
-* Assert equal expected 3 to number_of_players
-* Run test and check passes
+* Mock the method `get_string` to return "Derek" and then "3"
+* The expected parameter in the unit test case is 3.
+* The result parameter will call the method being tested and the test should pass.
 
 ## Sub-task 3 – Mock Console Input With Built In
 
@@ -69,13 +66,11 @@ To mock an input from the console.
 
 ### Requirement
 
-* Open `test/test_mock_ConsoleInOut.py`
-* Implement unit test `test_get_input_string_builtin`
+* Implement unit test `test_get_input_string_builtin` in `test/test_mock_ConsoleInOut.py` to mock a built in python function.
 * We want to test `ConsoleInOut.get_input_string` that calls `get_string` that calls the built in `input` Python method.
-* Mock built in `input` to return "Derek"
-* Assert equal expected "Derek" to equal get_input_string("What is your name")
-* Run test and check passes
-
+* Mock the built in `input` to return "Derek"
+* The expected parameter in the unit test case is "Derek".
+* The result parameter will call the method being tested and the test should pass.
 
 ## Sub-task 4 – Mock File Load
 
@@ -83,12 +78,11 @@ To mock an opening of a file.
 
 ### Requirement
 
-* Open `test/test_mock_LoadCSV.py`
-* Implement unit test `test_get_csv_rows`
+* Implement unit test `test_get_csv_rows` in `test/test_mock_LoadCSV.py` to mock an opening.
 * We want to test `LoadCSV.get_csv_rows` that calls `create_csv_reader` to open a file.
 * Mock built in Python file open to return "Derek\nXi"
-* Assert equal expected "Xi" to equal get_csv_rows("test.txt")[1][0]
-* Run test and check passes
+* The expected parameter in the unit test case is Xi.
+* The result parameter will call the method being tested and the test should pass.
 
 ## Sub-task 5 – Mock Get Player Names
 
@@ -96,13 +90,12 @@ To mock an opening of a file.
 
 ### Requirement
 
-* Open `test/test_mock_Game.py`
-* Implement unit test `test_get_computer_players_names`
+* Implement unit test `test_get_computer_players_names` in `test/test_mock_Game.py` to mock an opening.
 help_class
 * We want to test `Game.get_computer_players_names` that calls `LoadCSV.get_csv_rows` that calls `create_csv_reader` to open a file.
 * Mock built in Python file open to return "DEALER,Derek\nCOMPUTER,Xi"
-* Assert equal expected "Xi" to equal get_computer_players_names()[1]
-* Run test and check passes
+* The expected parameter in the unit test case is Xi.
+* The result parameter will call the method being tested and the test should pass.
 
 # Run Tests
 
