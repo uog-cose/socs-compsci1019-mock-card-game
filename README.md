@@ -1,6 +1,6 @@
 # Introduction
 
-Mocking allows you to test your application completely. It allows you to mock user input from console, files and databases. The main libraries used from from `unittest.mock` are `patch` and `mock_open`. For this task you are required to implement several unit tests using these libraries.
+Mocking allows you to test your application completely. It allows you to mock user input from console, files and databases. The main libraries used from from `unittest.mock` are `patch` to mock console input and `mock_open` to mock opening files. For this task you are required to implement several unit tests using these libraries.
 
 # Instructions
 
