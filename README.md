@@ -33,6 +33,7 @@ To mock an input from the console.
 * We want to test `ConsoleInOut.get_input_integer` that calls `get_string` to get an input from the console.
 * Mock the method `get_string` to return "18"
 * The expected output of the unit test, namely the value returned by `ConsoleInOut.get_input_integer`, should be 18 (number, not string).
+* Push sub task to GitGub, [Go To GitHub Commit](#github-commit)
 
 ## Sub-task 2 – Mock Console Game Info
 
@@ -44,6 +45,7 @@ To mock an input from the console.
 * We want to test `Game.get_game_info` that calls `get_input_string` and `get_input_integer` to get an inputs from the console.
 * Mock the method `get_string` so that it returns "Derek" on the first call and "3" on the second call. 
 * The expected output of the unit test, namely the value returned by `Game.get_game_info`, should be 3 (number, not string). 
+* Push sub task to GitGub, [Go To GitHub Commit](#github-commit)
 
 ## Sub-task 3 – Verify Mock Call Count
  
@@ -56,6 +58,7 @@ To mock an input from the console and verify how many times it was called.
 * Mock the `card_game.communication.ConsoleInOut.get_string` function to always return `abc`.
 * The expected output of the unit test, namely the value returned by `ConsoleInOut.get_integer`, should be -1.
 * Verify that the mocked function, namely `card_game.communication.ConsoleInOut.get_string`, was called exactly 5 times.
+* Push sub task to GitGub, [Go To GitHub Commit](#github-commit)
 
 ## Sub-task 4 – Mock File Load
 
@@ -68,6 +71,7 @@ To mock the opening of a file.
 * Mock file opening to return the following content: "Derek\nXi". Namely, the mocked file must provide the content `"Derek\nXi"` when read. 
 * Call `get_csv_rows` with any file name. The file does not need to exist, because the opening is mocked.
 * The mocked content has two lines, so assert that the first value of the second row equals the expected value `Xi`.
+* Push sub task to GitGub, [Go To GitHub Commit](#github-commit)
 
 ## Sub-task 5 – Verify Mock Call Arguments
 To mock a function and verify the arguments passed to it.
@@ -78,8 +82,15 @@ To mock a function and verify the arguments passed to it.
 * Create a full deck of 52 cards using create_deck() and record the first card.
 * Call play_a_card_from_deck(deck). Since the mock returns 0, assert that the returned card matches the first card in the deck.
 * Verify that random.randint was called exactly once with the expected arguments (0, 51) using mock_randint.assert_called_once_with(0, 51).
+* Push sub task to GitGub, [Go To GitHub Commit](#github-commit)
 
 
 # Run Tests
 
 python -m unittest discover -v -s ./test/ -p test_*.py
+
+# GitHub Commit
+* Open VS Code Terminal
+* git add *
+* git commit -m "sub task x complete"
+* git push
